@@ -1520,11 +1520,11 @@ nav a:active {
 
     /* Optimize scroll speeds for mobile - make them faster */
     .skills-track {
-        animation: scroll 20s linear infinite;
+        animation: scroll 12s linear infinite;
     }
 
     .linkedin-posts-track {
-        animation: scrollPosts 20s linear infinite;
+        animation: scrollPosts 12s linear infinite;
         gap: 20px;
     }
 }
