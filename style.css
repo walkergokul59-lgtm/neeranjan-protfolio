@@ -109,11 +109,11 @@ header {
 }
 
 .logo {
-    font-family: 'Bebas Neue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 20px;
-    font-weight: 900;
+    font-weight: 700;
     color: #ffffff;
-    letter-spacing: 0.1px;
+    letter-spacing: -0.5px;
     user-select: none;
     -webkit-user-select: none;
     transition: color 0.3s ease;
@@ -549,7 +549,7 @@ nav a:active {
 .linkedin-posts-track {
     display: flex;
     gap: 30px;
-    animation: scrollPosts 60s linear infinite;
+    animation: scrollPosts 30s linear infinite;
     will-change: transform;
 }
 
@@ -1327,28 +1327,99 @@ nav a:active {
 }
 
 @media (max-width: 480px) {
+
+    /* Reduce body and container padding for mobile */
+    body {
+        padding: 12px 12px;
+    }
+
+    .container {
+        padding: 12px;
+    }
+
+    /* Optimize header spacing */
+    header {
+        margin-bottom: 32px;
+        gap: 16px;
+    }
+
+    /* Reduce profile card padding */
     .profile-card {
-        padding: 24px;
+        padding: 20px;
+    }
+
+    /* Optimize hero section spacing */
+    .hero {
+        gap: 16px;
     }
 
     .profile-content h1 {
         font-size: 28px;
         line-height: 1.2;
+        margin-bottom: 12px;
     }
 
+    .tagline {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .about-section {
+        margin-top: 20px;
+    }
+
+    .about-section h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .about-section p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .about-section ul {
+        margin-top: 12px;
+        padding-left: 20px;
+    }
+
+    .about-section li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    /* Optimize section titles and spacing */
     .section-title {
-        font-size: 28px;
-    }
-
-    .footer-heading {
-        font-size: 28px;
-    }
-
-    .contact-heading {
         font-size: 24px;
+        margin-bottom: 24px;
     }
 
-    /* LinkedIn Posts Mobile */
+    /* Reduce skills section spacing */
+    .skills-section {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    /* Optimize services section */
+    .services-section {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    /* Optimize LinkedIn posts section */
+    .linkedin-posts-section {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .linkedin-posts-marquee {
+        padding: 12px 0;
+    }
+
     .linkedin-post-item {
         width: 320px;
         height: 450px;
@@ -1361,6 +1432,90 @@ nav a:active {
 
     .linkedin-posts-track {
         animation: scrollPosts 40s linear infinite;
+        gap: 20px;
+    }
+
+    .post-link {
+        padding: 16px;
+    }
+
+    .post-header {
+        margin-bottom: 12px;
+    }
+
+    .post-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .post-author h4 {
+        font-size: 14px;
+    }
+
+    .post-author p {
+        font-size: 12px;
+    }
+
+    .post-content>p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .post-image-container {
+        height: 250px;
+    }
+
+    /* Optimize footer spacing */
+    .footer-section {
+        margin-top: 40px;
+    }
+
+    .footer-card {
+        padding: 24px;
+    }
+
+    .footer-heading {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .contact-heading {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .contact-description {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .focus-list li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    /* Reduce illustration card height */
+    .illustration-card {
+        min-height: 280px;
+    }
+
+    /* Optimize social links spacing */
+    .social-links {
+        gap: 16px;
+    }
+
+    /* Reduce coming soon section padding */
+    .coming-soon {
+        padding: 40px 20px;
+    }
+
+    .coming-soon-content h3 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .coming-soon-content p {
+        font-size: 14px;
     }
 }
 
