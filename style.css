@@ -97,11 +97,11 @@ header {
 }
 
 .logo {
-    font-family: var(--font-display);
-    font-size: 32px;
-    font-weight: 400;
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: 700;
     color: var(--text);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     user-select: none;
     -webkit-user-select: none;
@@ -793,22 +793,86 @@ nav a:active {
 
 .service-card:nth-child(1) {
     animation-delay: 0.1s;
-    border-left: 8px solid var(--yellow);
+    background: var(--yellow);
+    color: var(--bg-dark);
+}
+
+.service-card:nth-child(1) h3,
+.service-card:nth-child(1) p,
+.service-card:nth-child(1) .service-features li {
+    color: var(--bg-dark);
+}
+
+.service-card:nth-child(1) .service-features {
+    border-top-color: rgba(26, 26, 26, 0.3);
+}
+
+.service-card:nth-child(1) .service-features li::before {
+    color: var(--bg-dark);
 }
 
 .service-card:nth-child(2) {
     animation-delay: 0.2s;
-    border-left: 8px solid var(--red);
+    background: var(--red);
+    color: var(--white);
+}
+
+.service-card:nth-child(2) h3,
+.service-card:nth-child(2) p,
+.service-card:nth-child(2) .service-features li {
+    color: var(--white);
+}
+
+.service-card:nth-child(2) .service-features {
+    border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.service-card:nth-child(2) .service-features li::before {
+    color: var(--white);
 }
 
 .service-card:nth-child(3) {
     animation-delay: 0.3s;
-    border-left: 8px solid var(--green);
+    background: var(--bg-dark);
+    color: var(--white);
+}
+
+.service-card:nth-child(3) h3,
+.service-card:nth-child(3) p,
+.service-card:nth-child(3) .service-features li {
+    color: #ccc;
+}
+
+.service-card:nth-child(3) h3 {
+    color: var(--white);
+}
+
+.service-card:nth-child(3) .service-features {
+    border-top-color: #333;
+}
+
+.service-card:nth-child(3) .service-features li::before {
+    color: var(--green);
 }
 
 .service-card:nth-child(4) {
     animation-delay: 0.4s;
-    border-left: 8px solid var(--yellow);
+    background: var(--green);
+    color: var(--bg-dark);
+}
+
+.service-card:nth-child(4) h3,
+.service-card:nth-child(4) p,
+.service-card:nth-child(4) .service-features li {
+    color: var(--bg-dark);
+}
+
+.service-card:nth-child(4) .service-features {
+    border-top-color: rgba(26, 26, 26, 0.3);
+}
+
+.service-card:nth-child(4) .service-features li::before {
+    color: var(--bg-dark);
 }
 
 .service-card::after {
