@@ -794,61 +794,82 @@ nav a:active {
 .service-card:nth-child(1) {
     animation-delay: 0.1s;
     background: var(--yellow);
-    color: var(--bg-dark);
+    color: #000;
 }
 
 .service-card:nth-child(1) h3,
 .service-card:nth-child(1) p,
 .service-card:nth-child(1) .service-features li {
-    color: var(--bg-dark);
+    color: #000;
+}
+
+.service-card:nth-child(1) h3 {
+    font-weight: 700;
+}
+
+.service-card:nth-child(1) p {
+    font-weight: 500;
 }
 
 .service-card:nth-child(1) .service-features {
-    border-top-color: rgba(26, 26, 26, 0.3);
+    border-top-color: rgba(0, 0, 0, 0.2);
 }
 
 .service-card:nth-child(1) .service-features li::before {
-    color: var(--bg-dark);
+    color: #000;
 }
 
 .service-card:nth-child(2) {
     animation-delay: 0.2s;
     background: var(--red);
-    color: var(--white);
+    color: #fff;
 }
 
 .service-card:nth-child(2) h3,
 .service-card:nth-child(2) p,
 .service-card:nth-child(2) .service-features li {
-    color: var(--white);
+    color: #fff;
+}
+
+.service-card:nth-child(2) h3 {
+    font-weight: 700;
+}
+
+.service-card:nth-child(2) p {
+    font-weight: 500;
 }
 
 .service-card:nth-child(2) .service-features {
-    border-top-color: rgba(255, 255, 255, 0.3);
+    border-top-color: rgba(255, 255, 255, 0.4);
 }
 
 .service-card:nth-child(2) .service-features li::before {
-    color: var(--white);
+    color: #fff;
 }
 
 .service-card:nth-child(3) {
     animation-delay: 0.3s;
     background: var(--bg-dark);
-    color: var(--white);
+    color: #e8e8e8;
 }
 
 .service-card:nth-child(3) h3,
 .service-card:nth-child(3) p,
 .service-card:nth-child(3) .service-features li {
-    color: #ccc;
+    color: #e8e8e8;
 }
 
 .service-card:nth-child(3) h3 {
-    color: var(--white);
+    color: #fff;
+    font-weight: 700;
+}
+
+.service-card:nth-child(3) p {
+    font-weight: 500;
 }
 
 .service-card:nth-child(3) .service-features {
-    border-top-color: #333;
+    border-top-color: #444;
 }
 
 .service-card:nth-child(3) .service-features li::before {
@@ -858,21 +879,29 @@ nav a:active {
 .service-card:nth-child(4) {
     animation-delay: 0.4s;
     background: var(--green);
-    color: var(--bg-dark);
+    color: #000;
 }
 
 .service-card:nth-child(4) h3,
 .service-card:nth-child(4) p,
 .service-card:nth-child(4) .service-features li {
-    color: var(--bg-dark);
+    color: #000;
+}
+
+.service-card:nth-child(4) h3 {
+    font-weight: 700;
+}
+
+.service-card:nth-child(4) p {
+    font-weight: 500;
 }
 
 .service-card:nth-child(4) .service-features {
-    border-top-color: rgba(26, 26, 26, 0.3);
+    border-top-color: rgba(0, 0, 0, 0.2);
 }
 
 .service-card:nth-child(4) .service-features li::before {
-    color: var(--bg-dark);
+    color: #000;
 }
 
 .service-card::after {
