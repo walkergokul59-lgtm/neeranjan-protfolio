@@ -455,7 +455,7 @@ nav a:active {
     height: 50px;
     object-fit: contain;
     transition: transform 0.2s ease;
-    filter: invert(1) contrast(1.15) brightness(1.1);
+    filter: brightness(0.95) drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
 }
 
 .skill-item:hover img {
