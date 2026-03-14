@@ -516,6 +516,12 @@ nav a:active {
     gap: 24px;
     animation: scrollPosts 30s linear infinite;
     will-change: transform;
+    cursor: grab;
+    user-select: none;
+}
+
+.linkedin-posts-track:active {
+    cursor: grabbing;
 }
 
 @keyframes scrollPosts {

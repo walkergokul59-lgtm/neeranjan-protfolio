@@ -83,8 +83,143 @@ async function loadLinkedInPosts() {
         // Render posts once + one duplicate set for seamless infinite scroll
         const html = [...posts, ...posts].map(buildPostHTML).join('');
         track.innerHTML = html;
+
+        // Initialize swipe functionality
+        initializeSwipe(track, posts.length);
     } catch (err) {
         console.error('LinkedIn posts load error:', err);
         track.innerHTML = '<p style="color:var(--text-light);padding:20px;">Could not load posts.</p>';
     }
+}
+
+function initializeSwipe(track, postCount) {
+    const marquee = track.parentElement; // .linkedin-posts-marquee
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let currentTranslate = 0;
+    let isAnimating = false;
+    
+    // Get post item width (including gap)
+    const getPostWidth = () => {
+        const item = track.querySelector('.linkedin-post-item');
+        if (!item) return 0;
+        const width = item.offsetWidth;
+        const style = window.getComputedStyle(track);
+        const gap = parseInt(style.gap) || 0;
+        return width + gap;
+    };
+
+    track.addEventListener('touchstart', (e) => {
+        if (isAnimating) return;
+        touchStartX = e.changedTouches[0].clientX;
+        track.style.animation = 'none'; // Pause animation during swipe
+        track.style.transition = 'none';
+    }, false);
+
+    track.addEventListener('touchend', (e) => {
+        if (isAnimating) return;
+        touchEndX = e.changedTouches[0].clientX;
+        const postWidth = getPostWidth();
+        const swipeDistance = touchStartX - touchEndX;
+        
+        if (Math.abs(swipeDistance) > 50) { // Minimum swipe distance
+            const postCount = track.querySelectorAll('.linkedin-post-item').length / 2;
+            const itemsToMove = Math.round(Math.abs(swipeDistance) / postWidth);
+            
+            if (swipeDistance > 0) {
+                // Swiped left, move carousel right (show next posts)
+                currentTranslate += itemsToMove * postWidth;
+            } else {
+                // Swiped right, move carousel left (show previous posts)
+                currentTranslate -= itemsToMove * postWidth;
+            }
+            
+            isAnimating = true;
+            track.style.transition = 'transform 0.5s ease-out';
+            track.style.transform = `translateX(-${currentTranslate}px)`;
+            
+            setTimeout(() => {
+                // Reset for seamless infinite loop
+                if (currentTranslate >= postCount * postWidth) {
+                    track.style.transition = 'none';
+                    currentTranslate = 0;
+                    track.style.transform = 'translateX(0)';
+                } else if (currentTranslate < 0) {
+                    track.style.transition = 'none';
+                    currentTranslate = (postCount - 1) * postWidth;
+                    track.style.transform = `translateX(-${currentTranslate}px)`;
+                }
+                
+                // Resume animation
+                track.style.animation = '';
+                isAnimating = false;
+            }, 500);
+        } else {
+            // Resume animation if swipe too small
+            track.style.animation = '';
+        }
+    }, false);
+
+    // Also support mouse drag on desktop
+    let mouseDown = false;
+    let mouseStartX = 0;
+
+    track.addEventListener('mousedown', (e) => {
+        if (isAnimating) return;
+        mouseDown = true;
+        mouseStartX = e.clientX;
+        track.style.animation = 'none';
+        track.style.transition = 'none';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!mouseDown || isAnimating) return;
+        const diff = mouseStartX - e.clientX;
+        track.style.transform = `translateX(-${currentTranslate + diff}px)`;
+    });
+
+    document.addEventListener('mouseup', (e) => {
+        if (!mouseDown) return;
+        mouseDown = false;
+        const postWidth = getPostWidth();
+        const swipeDistance = mouseStartX - e.clientX;
+        
+        if (Math.abs(swipeDistance) > 50) {
+            const itemsToMove = Math.round(Math.abs(swipeDistance) / postWidth);
+            
+            if (swipeDistance > 0) {
+                currentTranslate += itemsToMove * postWidth;
+            } else {
+                currentTranslate -= itemsToMove * postWidth;
+            }
+            
+            isAnimating = true;
+            track.style.transition = 'transform 0.5s ease-out';
+            track.style.transform = `translateX(-${currentTranslate}px)`;
+            
+            setTimeout(() => {
+                const fullPostCount = postCount * 2; // Because we duplicate posts
+                const singlePostCount = postCount;
+                
+                if (currentTranslate >= singlePostCount * postWidth) {
+                    track.style.transition = 'none';
+                    currentTranslate = 0;
+                    track.style.transform = 'translateX(0)';
+                } else if (currentTranslate < 0) {
+                    track.style.transition = 'none';
+                    currentTranslate = (singlePostCount - 1) * postWidth;
+                    track.style.transform = `translateX(-${currentTranslate}px)`;
+                }
+                
+                track.style.animation = '';
+                isAnimating = false;
+            }, 500);
+        } else {
+            track.style.animation = '';
+            track.style.transition = 'transform 0.3s ease-out';
+            track.style.transform = `translateX(-${currentTranslate}px)`;
+            isAnimating = true;
+            setTimeout(() => { isAnimating = false; }, 300);
+        }
+    });
 }
