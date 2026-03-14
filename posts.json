@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7421857142061555713",
+    "text": "I didn't post when I felt ready. I posted until I got ready.",
+    "image": "./Assets/linkedin_posts/post1.jpg",
+    "date": "2w"
+  },
+  {
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7420655682812809217",
+    "text": "Not everyone who walks alone is lost. Some are just on a path no one else has the courage to take...",
+    "image": "./Assets/linkedin_posts/post2.jpg",
+    "date": "2w"
+  },
+  {
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7419728086927097857",
+    "text": "Latest AI insights and automation workflows...",
+    "image": "./Assets/linkedin_posts/post3.jpg",
+    "date": "2w"
+  },
+  {
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7418607048642281472",
+    "text": "Building intelligent automation systems with n8n...",
+    "image": "./Assets/linkedin_posts/post4.jpg",
+    "date": "3w"
+  },
+  {
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7414509601372463104",
+    "text": "Real learnings from building AI solutions...",
+    "image": "./Assets/linkedin_posts/post5.jpg",
+    "date": "3w"
+  }
+]
