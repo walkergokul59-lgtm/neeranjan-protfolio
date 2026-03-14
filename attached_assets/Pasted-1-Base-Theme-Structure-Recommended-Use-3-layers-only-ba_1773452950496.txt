@@ -1,0 +1,151 @@
+1. Base Theme Structure (Recommended)
+
+Use 3 layers only: background, surface, accent.
+
+Purpose	Color	Hex
+Main background	Soft retro beige	#F2EFE7
+Card background	Deep charcoal	#111111
+Primary accent	Tech yellow	#FFD400
+Secondary accent	Electric blue	#4F8CFF
+Neutral text	Light gray	#D1D1D1
+Heading text	Pure white	#FFFFFF
+
+This removes harsh color clashes.
+
+2. Section Color Strategy
+
+Your current sections use yellow, red, green, black randomly.
+
+Instead use this structure:
+
+AI Consulting
+
+Yellow accent card
+
+Background: #111111
+Title: #FFD400
+Text: #D1D1D1
+Border: #FFD400
+n8n Automation
+
+Blue accent
+
+Background: #111111
+Title: #4F8CFF
+Text: #D1D1D1
+Border: #4F8CFF
+Research Paper Writing
+
+Purple accent
+
+Title: #9B5CF6
+AI Project Development
+
+Teal accent
+
+Title: #00D1B2
+
+This way the cards feel organized instead of random neon blocks.
+
+3. Fix Hero Section Contrast
+
+Currently yellow text on black is good, but the small subtitle is hard to read.
+
+Improve it like this:
+
+Heading:
+WHITE (#FFFFFF)
+
+Highlight word:
+YELLOW (#FFD400)
+
+Subtitle:
+GRAY (#A0A0A0)
+
+Example:
+
+TURNING IDEAS INTO
+INTELLIGENT SYSTEMS
+
+Where INTELLIGENT SYSTEMS = yellow.
+
+4. Improve Section Readability
+
+Your site background and cards blend slightly.
+
+Add subtle shadows + borders
+
+border: 1px solid #2A2A2A
+box-shadow: 0 8px 20px rgba(0,0,0,0.35)
+5. Fix Technology Icons Area
+
+Currently icons are floating on black.
+
+Better:
+
+background: #161616
+border-radius: 8px
+padding: 20px
+
+Icon hover effect:
+
+transform: translateY(-4px)
+border: 1px solid #FFD400
+6. LinkedIn Posts Section
+
+Your LinkedIn cards are too light compared to rest.
+
+Make them consistent:
+
+Card background: #161616
+Border: #2A2A2A
+Text: #D1D1D1
+7. CTA Section (Let's Connect)
+
+Red currently looks aggressive.
+
+Replace with warm orange.
+
+Background: #FF6B00
+Text: #FFFFFF
+Hover: #FF8A1F
+
+This still pops but feels less harsh.
+
+8. Typography Color Hierarchy
+
+Follow this rule everywhere:
+
+Element	Color
+Headings	#FFFFFF
+Highlight	#FFD400
+Normal text	#D1D1D1
+Secondary text	#9A9A9A
+9. Pro-Level Color Rule
+
+Use 80 / 15 / 5 rule
+
+80% neutral (black / gray)
+15% primary (yellow)
+5% accent (blue / purple / teal)
+
+Your current site is more like 40% bright colors, which hurts readability.
+
+10. Optional: Add Subtle Retro Texture
+
+To keep retro aesthetic without harming readability:
+
+background-image:
+radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+background-size: 4px 4px;
+Final Recommended Palette
+Black: #111111
+Dark Gray: #161616
+Text Gray: #D1D1D1
+White: #FFFFFF
+
+Accent Yellow: #FFD400
+Accent Blue: #4F8CFF
+Accent Purple: #9B5CF6
+Accent Teal: #00D1B2
+Accent Orange: #FF6B00
