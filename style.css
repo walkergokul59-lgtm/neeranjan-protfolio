@@ -1,17 +1,23 @@
 :root {
-    --bg: #F5F0E8;
-    --bg-dark: #1a1a1a;
-    --text: #1a1a1a;
-    --text-light: #4a4a4a;
-    --yellow: #FFE500;
-    --red: #FF2D20;
-    --green: #00FF41;
+    --bg: #111111;
+    --bg-surface: #161616;
+    --bg-dark: #111111;
+    --text: #D1D1D1;
+    --text-light: #9A9A9A;
+    --text-heading: #FFFFFF;
+    --yellow: #FFD400;
+    --blue: #4F8CFF;
+    --purple: #9B5CF6;
+    --teal: #00D1B2;
+    --orange: #FF6B00;
+    --orange-hover: #FF8A1F;
     --white: #ffffff;
-    --border: 3px solid #1a1a1a;
-    --border-thick: 4px solid #1a1a1a;
-    --shadow: 6px 6px 0 #1a1a1a;
-    --shadow-sm: 4px 4px 0 #1a1a1a;
-    --shadow-hover: 8px 8px 0 #1a1a1a;
+    --border-color: #2A2A2A;
+    --border: 1px solid #2A2A2A;
+    --border-thick: 1px solid #2A2A2A;
+    --shadow: 0 8px 20px rgba(0,0,0,0.35);
+    --shadow-sm: 0 4px 12px rgba(0,0,0,0.3);
+    --shadow-hover: 0 12px 28px rgba(0,0,0,0.5);
     --font-body: 'Space Mono', 'Courier New', monospace;
     --font-display: 'Bebas Neue', Impact, sans-serif;
 }
@@ -67,6 +73,8 @@ html {
 body {
     font-family: var(--font-body);
     background: var(--bg);
+    background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 4px 4px;
     min-height: 100vh;
     padding: 40px 20px;
     color: var(--text);
@@ -90,7 +98,7 @@ header {
     align-items: center;
     margin-bottom: 80px;
     padding-bottom: 20px;
-    border-bottom: var(--border-thick);
+    border-bottom: 1px solid #2A2A2A;
     position: relative;
     z-index: 10;
     animation: fadeInDown 0.8s ease-out;
@@ -100,7 +108,7 @@ header {
     font-family: var(--font-body);
     font-size: 22px;
     font-weight: 700;
-    color: var(--text);
+    color: var(--text-heading);
     letter-spacing: 1px;
     text-transform: uppercase;
     user-select: none;
@@ -110,7 +118,7 @@ header {
 }
 
 .logo:hover {
-    color: var(--red);
+    color: var(--yellow);
 }
 
 nav {
@@ -140,7 +148,7 @@ nav a::after {
     left: 0;
     width: 0;
     height: 3px;
-    background: var(--red);
+    background: var(--yellow);
     transition: width 0.2s ease;
 }
 
@@ -150,7 +158,7 @@ nav a:hover::after {
 
 nav a:hover,
 nav a:active {
-    color: var(--red);
+    color: var(--yellow);
 }
 
 .hero {
@@ -162,13 +170,13 @@ nav a:active {
 
 .profile-card {
     flex: 1;
-    background: var(--bg-dark);
-    border: var(--border-thick);
+    background: var(--bg-surface);
+    border: var(--border);
     box-shadow: var(--shadow);
     padding: 48px;
     position: relative;
     overflow: hidden;
-    color: var(--white);
+    color: var(--text);
 }
 
 .profile-card::after {
@@ -180,7 +188,7 @@ nav a:active {
     height: 200px;
     background: var(--yellow);
     clip-path: polygon(100% 0, 0 0, 100% 100%);
-    opacity: 0.15;
+    opacity: 0.08;
     pointer-events: none;
 }
 
@@ -213,9 +221,9 @@ nav a:active {
     font-size: 18px;
     font-weight: 700;
     font-family: var(--font-display);
-    color: var(--bg-dark);
+    color: var(--bg);
     flex-shrink: 0;
-    border: 3px solid var(--bg-dark);
+    border: 2px solid var(--yellow);
     transition: transform 0.2s ease;
 }
 
@@ -225,7 +233,7 @@ nav a:active {
 
 .greeting {
     font-size: 14px;
-    color: #aaa;
+    color: var(--text-light);
     font-weight: 400;
     font-family: var(--font-body);
 }
@@ -237,7 +245,7 @@ nav a:active {
 }
 
 .social-links a {
-    color: #aaa;
+    color: var(--text-light);
     text-decoration: none;
     font-size: 18px;
     transition: all 0.15s ease;
@@ -247,17 +255,17 @@ nav a:active {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 2px solid #444;
+    border: 1px solid var(--border-color);
     background: transparent;
 }
 
 .social-links a:hover,
 .social-links a:active {
-    color: var(--bg-dark);
+    color: var(--bg);
     background: var(--yellow);
     border-color: var(--yellow);
-    transform: translate(-2px, -2px);
-    box-shadow: 2px 2px 0 var(--yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 212, 0, 0.3);
 }
 
 .profile-content {
@@ -271,7 +279,7 @@ nav a:active {
     font-weight: 400;
     line-height: 1.0;
     margin-bottom: 20px;
-    color: var(--white);
+    color: var(--text-heading);
     letter-spacing: 3px;
     text-transform: uppercase;
 }
@@ -283,7 +291,7 @@ nav a:active {
 .profile-content .tagline {
     font-size: 13px;
     line-height: 1.8;
-    color: var(--yellow);
+    color: #A0A0A0;
     font-weight: 700;
     margin-bottom: 32px;
     text-transform: uppercase;
@@ -294,7 +302,7 @@ nav a:active {
 
 .about-section {
     margin-top: 32px;
-    border-top: 2px solid #333;
+    border-top: 1px solid var(--border-color);
     padding-top: 24px;
 }
 
@@ -302,7 +310,7 @@ nav a:active {
     font-family: var(--font-display);
     font-size: 32px;
     font-weight: 400;
-    color: var(--white);
+    color: var(--text-heading);
     margin-bottom: 16px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -311,7 +319,7 @@ nav a:active {
 .about-section p {
     font-size: 14px;
     line-height: 1.8;
-    color: #bbb;
+    color: var(--text);
     margin-bottom: 16px;
     font-weight: 400;
 }
@@ -330,7 +338,7 @@ nav a:active {
 .about-section ul li {
     font-size: 14px;
     line-height: 2;
-    color: #bbb;
+    color: var(--text);
     margin-bottom: 4px;
     padding-left: 24px;
     position: relative;
@@ -340,15 +348,15 @@ nav a:active {
     content: '>';
     position: absolute;
     left: 4px;
-    color: var(--green);
+    color: var(--yellow);
     font-weight: 700;
     font-family: var(--font-body);
 }
 
 .illustration-card {
     width: 300px;
-    background: var(--yellow);
-    border: var(--border-thick);
+    background: var(--bg-surface);
+    border: var(--border);
     box-shadow: var(--shadow);
     display: flex;
     align-items: center;
@@ -376,7 +384,6 @@ nav a:active {
     object-fit: cover;
     object-position: center;
     filter: grayscale(20%) contrast(1.1);
-    mix-blend-mode: multiply;
 }
 
 .skills-section {
@@ -390,7 +397,7 @@ nav a:active {
     font-family: var(--font-display);
     font-size: 48px;
     font-weight: 400;
-    color: var(--text);
+    color: var(--text-heading);
     margin-bottom: 48px;
     text-align: center;
     letter-spacing: 3px;
@@ -404,9 +411,9 @@ nav a:active {
     overflow: hidden;
     position: relative;
     padding: 20px 0;
-    background: var(--bg-dark);
-    border-top: var(--border-thick);
-    border-bottom: var(--border-thick);
+    background: #1a1a1a;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     margin-left: -40px;
     margin-right: -40px;
     width: calc(100% + 80px);
@@ -438,16 +445,17 @@ nav a:active {
     flex-shrink: 0;
     width: 80px;
     height: 80px;
-    background: var(--bg-dark);
-    border: 3px solid #444;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
     transition: all 0.15s ease;
 }
 
 .skill-item:hover {
-    background: var(--yellow);
     border-color: var(--yellow);
-    transform: translate(-3px, -3px);
-    box-shadow: 3px 3px 0 var(--yellow);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(255, 212, 0, 0.2);
 }
 
 .skill-item img {
@@ -455,11 +463,9 @@ nav a:active {
     height: 50px;
     object-fit: contain;
     transition: transform 0.2s ease;
-    filter: brightness(0.95) drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
 }
 
 .skill-item:hover img {
-    filter: none;
     transform: scale(1.1);
 }
 
@@ -495,11 +501,13 @@ nav a:active {
 .linkedin-posts-marquee::before {
     left: 0;
     background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
+    z-index: 2;
 }
 
 .linkedin-posts-marquee::after {
     right: 0;
     background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
+    z-index: 2;
 }
 
 .linkedin-posts-track {
@@ -519,8 +527,8 @@ nav a:active {
     width: 420px;
     height: 580px;
     min-height: 580px;
-    background: var(--white);
-    border: var(--border-thick);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     overflow: hidden;
     transition: all 0.15s ease;
@@ -544,21 +552,12 @@ nav a:active {
     z-index: 0;
 }
 
-.post-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: inherit;
-    padding: 24px;
-}
-
 .post-header {
     display: flex;
     gap: 12px;
     margin-bottom: 16px;
     padding-bottom: 16px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .post-avatar {
@@ -566,13 +565,13 @@ nav a:active {
     height: 48px;
     object-fit: cover;
     flex-shrink: 0;
-    border: 2px solid var(--bg-dark);
+    border: 1px solid var(--border-color);
 }
 
 .post-author h4 {
     font-size: 14px;
     font-weight: 700;
-    color: var(--text);
+    color: var(--text-heading);
     margin: 0 0 4px 0;
     font-family: var(--font-body);
     text-transform: uppercase;
@@ -586,7 +585,7 @@ nav a:active {
 
 .post-author span {
     font-size: 11px;
-    color: #999;
+    color: var(--text-light);
 }
 
 .post-content {
@@ -600,11 +599,20 @@ nav a:active {
     margin-bottom: 16px;
 }
 
+.post-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    padding: 24px;
+}
+
 .post-image-container {
     width: 100%;
     height: 300px;
     overflow: hidden;
-    border: 2px solid var(--bg-dark);
+    border: 1px solid var(--border-color);
     transition: all 0.15s ease;
 }
 
@@ -622,22 +630,22 @@ nav a:active {
 .post-image-placeholder {
     width: 100%;
     height: 300px;
-    background: #f0f0f0;
+    background: var(--bg);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px dashed var(--text);
+    border: 1px dashed var(--border-color);
 }
 
 .post-image-placeholder span {
     font-size: 14px;
-    color: var(--text);
+    color: var(--text-light);
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .linkedin-post-item:hover .post-image-placeholder {
-    background: var(--yellow);
+    border-color: var(--yellow);
 }
 
 .linkedin-posts-marquee:hover .linkedin-posts-track {
@@ -657,8 +665,8 @@ nav a:active {
 }
 
 .project-card {
-    background: var(--white);
-    border: var(--border-thick);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
     overflow: hidden;
     transition: all 0.15s ease;
@@ -679,7 +687,7 @@ nav a:active {
     width: 100%;
     height: 220px;
     overflow: hidden;
-    border-bottom: var(--border);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .project-thumbnail img {
@@ -736,7 +744,7 @@ nav a:active {
     font-family: var(--font-display);
     font-size: 24px;
     font-weight: 400;
-    color: var(--text);
+    color: var(--text-heading);
     margin-bottom: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -759,9 +767,9 @@ nav a:active {
 .project-tag {
     font-size: 11px;
     font-weight: 700;
-    color: var(--bg-dark);
+    color: var(--bg);
     background: var(--yellow);
-    border: 2px solid var(--bg-dark);
+    border: none;
     padding: 4px 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -781,8 +789,8 @@ nav a:active {
 }
 
 .service-card {
-    background: var(--white);
-    border: var(--border-thick);
+    background: var(--bg);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
     padding: 40px;
     position: relative;
@@ -793,115 +801,54 @@ nav a:active {
 
 .service-card:nth-child(1) {
     animation-delay: 0.1s;
-    background: var(--yellow);
-    color: #000;
-}
-
-.service-card:nth-child(1) h3,
-.service-card:nth-child(1) p,
-.service-card:nth-child(1) .service-features li {
-    color: #000;
+    border-color: var(--yellow);
 }
 
 .service-card:nth-child(1) h3 {
-    font-weight: 700;
-}
-
-.service-card:nth-child(1) p {
-    font-weight: 500;
-}
-
-.service-card:nth-child(1) .service-features {
-    border-top-color: rgba(0, 0, 0, 0.2);
+    color: var(--yellow);
 }
 
 .service-card:nth-child(1) .service-features li::before {
-    color: #000;
+    color: var(--yellow);
 }
 
 .service-card:nth-child(2) {
     animation-delay: 0.2s;
-    background: var(--red);
-    color: #fff;
-}
-
-.service-card:nth-child(2) h3,
-.service-card:nth-child(2) p,
-.service-card:nth-child(2) .service-features li {
-    color: #fff;
+    border-color: var(--blue);
 }
 
 .service-card:nth-child(2) h3 {
-    font-weight: 700;
-}
-
-.service-card:nth-child(2) p {
-    font-weight: 500;
-}
-
-.service-card:nth-child(2) .service-features {
-    border-top-color: rgba(255, 255, 255, 0.4);
+    color: var(--blue);
 }
 
 .service-card:nth-child(2) .service-features li::before {
-    color: #fff;
+    color: var(--blue);
 }
 
 .service-card:nth-child(3) {
     animation-delay: 0.3s;
-    background: var(--bg-dark);
-    color: #e8e8e8;
-}
-
-.service-card:nth-child(3) h3,
-.service-card:nth-child(3) p,
-.service-card:nth-child(3) .service-features li {
-    color: #e8e8e8;
+    border-color: var(--purple);
 }
 
 .service-card:nth-child(3) h3 {
-    color: #fff;
-    font-weight: 700;
-}
-
-.service-card:nth-child(3) p {
-    font-weight: 500;
-}
-
-.service-card:nth-child(3) .service-features {
-    border-top-color: #444;
+    color: var(--purple);
 }
 
 .service-card:nth-child(3) .service-features li::before {
-    color: var(--green);
+    color: var(--purple);
 }
 
 .service-card:nth-child(4) {
     animation-delay: 0.4s;
-    background: var(--green);
-    color: #000;
-}
-
-.service-card:nth-child(4) h3,
-.service-card:nth-child(4) p,
-.service-card:nth-child(4) .service-features li {
-    color: #000;
+    border-color: var(--teal);
 }
 
 .service-card:nth-child(4) h3 {
-    font-weight: 700;
-}
-
-.service-card:nth-child(4) p {
-    font-weight: 500;
-}
-
-.service-card:nth-child(4) .service-features {
-    border-top-color: rgba(0, 0, 0, 0.2);
+    color: var(--teal);
 }
 
 .service-card:nth-child(4) .service-features li::before {
-    color: #000;
+    color: var(--teal);
 }
 
 .service-card::after {
@@ -909,7 +856,7 @@ nav a:active {
 }
 
 .service-card:hover {
-    transform: translate(-4px, -4px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
 }
 
@@ -924,7 +871,7 @@ nav a:active {
     font-family: var(--font-display);
     font-size: 28px;
     font-weight: 400;
-    color: var(--text);
+    color: var(--text-heading);
     margin-bottom: 16px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -935,7 +882,7 @@ nav a:active {
 .service-card p {
     font-size: 14px;
     line-height: 1.8;
-    color: var(--text-light);
+    color: var(--text);
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
@@ -946,14 +893,14 @@ nav a:active {
     padding: 0;
     position: relative;
     z-index: 2;
-    border-top: 2px solid #eee;
+    border-top: 1px solid var(--border-color);
     padding-top: 16px;
 }
 
 .service-features li {
     font-size: 13px;
     line-height: 2;
-    color: var(--text-light);
+    color: var(--text);
     margin-bottom: 4px;
     padding-left: 24px;
     position: relative;
@@ -963,7 +910,7 @@ nav a:active {
     content: '>';
     position: absolute;
     left: 4px;
-    color: var(--red);
+    color: var(--yellow);
     font-weight: 700;
     font-family: var(--font-body);
 }
@@ -982,8 +929,8 @@ nav a:active {
 }
 
 .content-card {
-    background: var(--white);
-    border: var(--border-thick);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     padding: 32px 24px;
     text-align: center;
@@ -998,15 +945,15 @@ nav a:active {
 .content-card:nth-child(4) { animation-delay: 0.4s; }
 
 .content-card:hover {
-    transform: translate(-3px, -3px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
-    background: var(--yellow);
+    border-color: var(--yellow);
 }
 
 .content-card h3 {
     font-size: 18px;
     font-weight: 700;
-    color: var(--text);
+    color: var(--text-heading);
     margin-bottom: 12px;
     font-family: var(--font-body);
 }
@@ -1022,11 +969,11 @@ nav a:active {
 }
 
 .content-why {
-    background: var(--bg-dark);
-    border: var(--border-thick);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
     padding: 40px;
-    color: var(--white);
+    color: var(--text);
     position: relative;
     opacity: 0;
     animation: fadeInUp 0.6s ease-out 0.5s forwards;
@@ -1040,7 +987,7 @@ nav a:active {
     font-family: var(--font-display);
     font-size: 32px;
     font-weight: 400;
-    color: var(--white);
+    color: var(--text-heading);
     margin-bottom: 20px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1058,7 +1005,7 @@ nav a:active {
 .content-why ul li {
     font-size: 15px;
     line-height: 2;
-    color: #bbb;
+    color: var(--text);
     margin-bottom: 8px;
     padding-left: 28px;
     position: relative;
@@ -1068,7 +1015,7 @@ nav a:active {
     content: '>';
     position: absolute;
     left: 4px;
-    color: var(--green);
+    color: var(--yellow);
     font-weight: 700;
     font-family: var(--font-body);
 }
@@ -1084,8 +1031,8 @@ nav a:active {
     align-items: center;
     justify-content: center;
     min-height: 300px;
-    background: var(--white);
-    border: 3px dashed var(--text);
+    background: var(--bg-surface);
+    border: 1px dashed var(--border-color);
     box-shadow: var(--shadow-sm);
     position: relative;
     overflow: hidden;
@@ -1105,7 +1052,7 @@ nav a:active {
     font-family: var(--font-display);
     font-size: 40px;
     font-weight: 400;
-    color: var(--text);
+    color: var(--text-heading);
     margin-bottom: 16px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -1129,8 +1076,8 @@ nav a:active {
 }
 
 .footer-card {
-    background: var(--white);
-    border: var(--border-thick);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
     padding: 48px;
     position: relative;
@@ -1153,8 +1100,8 @@ nav a:active {
 }
 
 .focus-card {
-    background: var(--bg-dark);
-    color: var(--white);
+    background: var(--bg-surface);
+    color: var(--text);
 }
 
 .focus-card::before {
@@ -1163,7 +1110,7 @@ nav a:active {
 
 .footer-subtitle {
     font-size: 12px;
-    color: #999;
+    color: var(--text-light);
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
@@ -1176,7 +1123,7 @@ nav a:active {
     font-family: var(--font-display);
     font-size: 48px;
     font-weight: 400;
-    color: var(--white);
+    color: var(--text-heading);
     margin-bottom: 24px;
     line-height: 1.1;
     position: relative;
@@ -1190,14 +1137,14 @@ nav a:active {
     padding: 0;
     position: relative;
     z-index: 1;
-    border-top: 2px solid #333;
+    border-top: 1px solid var(--border-color);
     padding-top: 20px;
 }
 
 .focus-list li {
     font-size: 14px;
     line-height: 2;
-    color: #bbb;
+    color: var(--text);
     margin-bottom: 8px;
     padding-left: 24px;
     position: relative;
@@ -1207,13 +1154,13 @@ nav a:active {
     content: '>';
     position: absolute;
     left: 0;
-    color: var(--green);
+    color: var(--yellow);
     font-weight: 700;
     font-family: var(--font-body);
 }
 
 .contact-card {
-    background: var(--red);
+    background: var(--orange);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1268,26 +1215,26 @@ nav a:active {
     width: 56px;
     height: 56px;
     background: var(--white);
-    border: 3px solid var(--bg-dark);
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--bg-dark);
+    color: var(--bg);
     text-decoration: none;
     transition: all 0.15s ease;
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .contact-link:hover {
     background: var(--yellow);
-    transform: translate(-3px, -3px);
-    box-shadow: 5px 5px 0 rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 40px;
-    border-top: var(--border-thick);
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-bottom p {
