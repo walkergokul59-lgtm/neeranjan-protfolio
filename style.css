@@ -1165,6 +1165,11 @@ nav a:active {
     flex-direction: column;
     justify-content: space-between;
     color: var(--white);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-card:hover {
+    background: var(--orange-hover);
 }
 
 .contact-card::after {
